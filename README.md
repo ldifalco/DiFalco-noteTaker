@@ -2,8 +2,6 @@
 
 
 
-https://fast-ridge-85121.herokuapp.com/
-
 Application using Express.js for writing and compiling notes
 
 
