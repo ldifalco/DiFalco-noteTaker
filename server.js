@@ -23,19 +23,19 @@ app.get('/api/notes', (req, res) => {
     if (err) {
       console.log(err);
     }
-    const notesArray = JSON.parse(data);
-    res.json(notesArray);
+    const notesAdded = JSON.parse(data);
+    res.json(notesAdded);
   });
 });
 
-
+//posts new note into db.json, uses uuid to generate ids for new additions
 app.post('/api/notes', (req, res) => {
   fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) {
       console.log(err);
     };
   
-    const notesArray = JSON.parse(data);
+    const notesAdded = JSON.parse(data);
 
     const { title, text } = req.body;
     if (title && text) {
@@ -44,9 +44,9 @@ app.post('/api/notes', (req, res) => {
         text,
         id: uuidv4()
       };
-   
-      notesArray.push(newNote);
-      fs.writeFile(`./db/db.json`, JSON.stringify(notesArray), (err) =>
+   //writes new notes into db.json
+      notesAdded.push(newNote);
+      fs.writeFile(`./db/db.json`, JSON.stringify(notesAdded), (err) =>
         err
           ? console.error(err)
           : console.log(
