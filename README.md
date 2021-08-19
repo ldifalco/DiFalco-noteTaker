@@ -23,9 +23,9 @@ https://fast-ridge-85121.herokuapp.com/
 
 
 
-# Contact Me
+# Contact Info
 
-Contact Me Here: luke.difalco52@gmail.com 
+luke.difalco52@gmail.com 
 
 
 
