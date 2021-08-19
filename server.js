@@ -11,13 +11,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
+//get requests for notes.html
 
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
-
+//Parses json file
 app.get('/api/notes', (req, res) => {
   fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) {
@@ -50,9 +50,8 @@ app.post('/api/notes', (req, res) => {
         err
           ? console.error(err)
           : console.log(
-            `New note ${newNote.title} has been saved!`
-          )
-      );
+        
+      ));
       res.json(newNote);
     }
   });
